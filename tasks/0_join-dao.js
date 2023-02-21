@@ -20,7 +20,7 @@ task("join-dao", "Join the Data DAO as a member")
         async function callRpc(method, params) {
             var options = {
               method: "POST",
-              url: "https://wss.hyperspace.node.glif.io/apigw/lotus/rpc/v1",
+              url: "https://api.hyperspace.node.glif.io/rpc/v1",
               headers: {
                 "Content-Type": "application/json",
               },
@@ -41,18 +41,20 @@ task("join-dao", "Join the Data DAO as a member")
         
         console.log("Minting Membership NFT ...");
 
-        await MembershipNFTContract.mint(signer.address, {
-          gasLimit: 1000000000,
-          maxPriorityFeePerGas: priorityFee
-        })
+        // await MembershipNFTContract.mint(signer.address, {
+        //   gasLimit: 30000000,
+        //   maxPriorityFeePerGas: priorityFee
+        // })
+        await MembershipNFTContract.mint(signer.address)
 
         const DataDAOExample = await ethers.getContractFactory("DataDAOExample")
         const DataDAOExampleContract = new ethers.Contract(daocontract, DataDAOExample.interface, signer)
 
-        await DataDAOExampleContract.joinDAO({
-            gasLimit: 1000000000,
-            maxPriorityFeePerGas: priorityFee
-        })
+        // await DataDAOExampleContract.joinDAO({
+        //     gasLimit: 30000000,
+        //     maxPriorityFeePerGas: priorityFee
+        // })
+        await DataDAOExampleContract.joinDAO()
         
         console.log(signer.address, " joined the Data DAO");
 

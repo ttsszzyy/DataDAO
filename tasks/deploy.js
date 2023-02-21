@@ -1,8 +1,16 @@
+/*
+ * @Author: Young
+ * @Date: 2023-02-20 23:33:12
+ * @LastEditors: Young
+ * @LastEditTime: 2023-02-20 23:33:12
+ * @FilePath: /DataDAO/tasks/deploy.js
+ */
 
-const { task, types } = require("hardhat/config")
+const { task, types,networkConfig } = require("hardhat/config")
 const ethers = require("ethers")
 const util = require("util")
 const request = util.promisify(require("request"))
+// const { networkConfig } = require("../helper-hardhat-config")
 const DEPLOYER_PRIVATE_KEY = network.config.accounts[0];
 
 task("deploy:membershipnft", "Deploy Membership NFT Contract")
@@ -36,7 +44,7 @@ task("deploy:membershipnft", "Deploy Membership NFT Contract")
         const membershipNFT = await ethers.getContractFactory("MembershipNFT")
     
             const membershipNFTContract = await membershipNFT.deploy({
-                gasLimit: 1000000000,
+                gasLimit: 3000000,
                 maxPriorityFeePerGas: priorityFee
             })
     
@@ -96,7 +104,7 @@ task("deploy", "Deploy DataDAOExample contract")
             const dataDAOExample = await ethers.getContractFactory("DataDAOExample")
 
             const dataDAOExampleContract = await dataDAOExample.deploy(adminsList, membershipnftaddress, {
-                gasLimit: 1000000000,
+                gasLimit: 3000000,
                 maxPriorityFeePerGas: priorityFee
             })
     

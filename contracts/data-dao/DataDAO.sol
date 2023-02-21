@@ -10,7 +10,7 @@ import "../openzeppelin/contracts/access/AccessControl.sol";
 contract DataDAO is IDataDAO, DataDAOCore, AccessControl {
 
     using SafeMath for uint256;
-    
+
     /// @dev Gets a cid and returns Deal details associated with the cid
     mapping(bytes => Deal) public deals;
     /// @dev Gets a cid and provider returns true or false depending upon if its the providers of the cid
@@ -55,7 +55,7 @@ contract DataDAO is IDataDAO, DataDAOCore, AccessControl {
         deals[_cidraw] = newDeal;
 
     }
-   
+
     /// @dev Approves or Rejects the proposal - This would enable to govern the data that is stored by the DAO 
     /// @param _cidraw: cid of the proposal
     /// @param _choice: decision of the DAO on the proposal

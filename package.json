@@ -1,7 +1,7 @@
 {
-    "name": "Data DAO",
+    "name": "DataDAO",
     "version": "0.0.0",
-    "description": "Data DAO Contract",
+    "description": "DataDAOContract",
     "scripts": {},
     "repository": {
         "type": "git",
@@ -23,14 +23,28 @@
         "access": "public"
     },
     "devDependencies": {
+        "@nomicfoundation/hardhat-chai-matchers": "^1.0.6",
+        "@nomicfoundation/hardhat-network-helpers": "^1.0.8",
+        "@nomiclabs/hardhat-ethers": "^2.2.2",
+        "@nomiclabs/hardhat-etherscan": "^3.1.6",
+        "@typechain/ethers-v5": "^10.2.0",
+        "@typechain/hardhat": "^6.1.5",
+        "@types/mocha": "^10.0.1",
+        "hardhat": "^2.12.7",
+        "hardhat-gas-reporter": "^1.0.9",
         "prettier": "^2.7.1",
-        "prettier-plugin-solidity": "^1.0.0"
+        "prettier-plugin-solidity": "^1.0.0",
+        "solidity-coverage": "^0.8.2",
+        "ts-node": "^10.9.1",
+        "typechain": "^8.1.1",
+        "typescript": "^4.9.5"
     },
     "dependencies": {
         "@nomicfoundation/hardhat-toolbox": "^2.0.1",
         "@openzeppelin/contracts": "^4.8.0",
         "@zondax/solidity-bignumber": "^0.1.0",
         "cids": "^0.7.5",
+        "dotenv": "^16.0.3",
         "hardhat-deploy": "^0.11.22",
         "hardhat-deploy-ethers": "^0.3.0-beta.13",
         "solidity-cborutils": "^2.0.0"
